@@ -57,8 +57,12 @@
 		}
 		$xml.='</document>';
 		$html.=$template['footer_index'];
+		$version=intval(@file_get_contents('repository.version'));
+		$version++;
+		file_put_contents('repository.version', $version);
 		file_put_contents('repository.xml', $xml);
 		file_put_contents('index.html', $html);
+
 	}
 	
 
