@@ -26,6 +26,7 @@
 		$xml='<?xml version="1.0" encoding="UTF-8"?><document>'."\n";
 		$html=$template['header_index'];
 		$zipfiles=glob('ZIPFILES/*.zip');
+		sort($zipfiles,SORT_NATURAL | SORT_FLAG_CASE);
 		foreach ($zipfiles as $zipfile){
 			$nom=str_replace('.zip','',basename($zipfile));
 			$file=basename($zipfile);
