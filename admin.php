@@ -34,10 +34,7 @@
 			rrmdir($dest);
 			unzip_file($zipfile, 'REPO/');
 			rename ($dest.'/icon.png', $dest.'/'.$nom.'.png');
-			/*      <name>pluginname</name>
-	      <file>https://github.com/mongit/gutuma/pluginname.1.6.zip</file>
-	      <icon>https://github.com/mongit/gutuma/pluginname.png</icon>*/
-
+			
 	      	preg_match('#\<document\>([^§]+)\<\/document\>#i',file_get_contents($dest.'/infos.xml'),$infos);
 	      	$icon=URL_ROOT.'REPO/'.$nom.'/'.$nom.'.png';
 	      	$zip=URL_ROOT.'ZIPFILES/'.$file;
