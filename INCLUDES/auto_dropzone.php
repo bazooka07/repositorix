@@ -337,7 +337,7 @@ if ($_FILES){
                 } else {
                     dropArea.className = 'DD_dropzone'
                     bar.style.width='0';
-                    <?php if ($auto_dropzone['auto_refresh_after_upload']) {echo 'window.location="admin.php?regen";';}?>
+                    <?php if ($auto_dropzone['auto_refresh_after_upload']) {echo 'window.location="admin.php?regen&token='.returnToken().'";';}?>
                 }
             }
 

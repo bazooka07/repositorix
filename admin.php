@@ -2,7 +2,7 @@
 	/*
 	* **************************************************************************************************
 	* Repositorix 
-	* @version 1.0
+	* @version 1.1
 	* @author bronco@warriordudimanche.net
 	* @url warriordudimanche.net
 	* 
@@ -47,7 +47,6 @@
 	      	$xml.="</plugin>\n";
 	      	# HTML
 	      	$html.="<ul class=\"plugin\">\n";
-	      	$html.='<img class="icon" src="'.$icon.'"/>';
 	      	$html.=info2html($infos[1]);
 	      	$html.='<li class="download"><a href="'.$zip .'">'.$file.'</a></li>';
 	      	$html.="</ul>\n";

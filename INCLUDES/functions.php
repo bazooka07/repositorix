@@ -41,17 +41,19 @@ function unzip_file($file, $destination) {
 	return true;
 }
 function info2html($str){
+	global $icon;
 	$str=str_ireplace('<![CDATA[', '', $str);
 	$str=str_ireplace(']]>', '', $str);
 	$str=str_ireplace('title>', 'h2>', $str);
-	$str=str_ireplace('<author>', '<li class="author">Auteur : ', $str);
+	$str=str_ireplace('<h2>', '<h2><img class="icon" src="'.$icon.'"/>', $str);
+	$str=str_ireplace('<author>', '<li class="author">Auteur&nbsp;&nbsp;: ', $str);
 	$str=str_ireplace('</author>', '</li>', $str);
 	$str=str_ireplace('</version>', '</li>', $str);
 	$str=str_ireplace('</date>', '</li>', $str);
 	$str=str_ireplace('</site>', '</li>', $str);
 	$str=str_ireplace('<version>', '<li class="version">version : ', $str);
-	$str=str_ireplace('<date>', '<li class="date">date : ', $str);
-	$str=str_ireplace('<site>', '<li class="site">site : ', $str);
+	$str=str_ireplace('<date>', '<li class="date">date&nbsp;&nbsp;&nbsp;&nbsp;: ', $str);
+	$str=str_ireplace('<site>', '<li class="site">site&nbsp;&nbsp;&nbsp;&nbsp;: ', $str);
 	$str=str_ireplace('description>', 'div>', $str);
 	return $str;
 }

@@ -1,5 +1,9 @@
 <?php
 	/**
+	* BoZoN admin only protection:
+	* part of auto_restrict lib 
+	* @author: Bronco (bronco@warriordudimanche.net)
+	*
 	 * auto_restrict
 	 * @author bronco@warriordudimanche.com / www.warriordudimanche.net
 	 * @copyright open source and free to adapt (keep me aware !)
