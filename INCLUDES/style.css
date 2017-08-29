@@ -30,6 +30,7 @@ a:hover{ color:#000;text-shadow:0 0 2px;}
     .index .version{padding-left:20px;background:url(IMG/66.png) no-repeat left center;}
     .index .date{padding-left:20px;background:url(IMG/70.png) no-repeat left center;}
     .index .site{padding-left:20px;background:url(IMG/6.png) no-repeat left center;}
+    .index .compatible{padding-left:20px;background:url(IMG/80.png) no-repeat left center;}
     .index .download{padding:5px;padding-left:30px;margin:0;background:url(IMG/025.png) no-repeat 10px center orange;}
     .index .download a{vertical-align: middle}
     .index div{padding:10px;padding-left:20px;}
