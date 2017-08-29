@@ -86,7 +86,7 @@ test_server_config();
 	$auto_dropzone['dropzone_text']="Glisser les ZIP des plugins";
 	$auto_dropzone['destination_filepath']='../ZIPFILES/';
 	$auto_dropzone['my_filepath']='INCLUDES/auto_dropzone.php';
-	$auto_dropzone['allowed_filetypes']='zip';
+	$auto_dropzone['allowed_filetypes']='zip,application/x-zip-compressed';
 	$auto_dropzone['use_style']=false;
 	include('INCLUDES/auto_dropzone.php');
 
