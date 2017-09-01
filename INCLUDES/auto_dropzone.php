@@ -70,8 +70,9 @@ if (isset($_SESSION['auto_dropzone'])){
     if (empty($auto_dropzone['destination_filepath'])){         $auto_dropzone['destination_filepath']='destination/'; }
     if (empty($auto_dropzone['my_filepath'])){                  $auto_dropzone['my_filepath']=$_SERVER['SCRIPT_NAME']; }
 
-    if (!is_array($auto_dropzone['destination_filepath'])&&!is_dir($auto_dropzone['destination_filepath'])){
-        mkdir($auto_dropzone['destination_filepath'],01777);file_put_contents($auto_dropzone['destination_filepath'].'index.html','');
+    if (!is_array($auto_dropzone['destination_filepath'])&&!is_dir(ABS_ROOT.basename($auto_dropzone['destination_filepath']))){
+    	$auto_dropzone['destination_filepath'] = basename($auto_dropzone['destination_filepath']);
+        mkdir(ABS_ROOT.$auto_dropzone['destination_filepath'],01777);file_put_contents(ABS_ROOT.$auto_dropzone['destination_filepath'].'index.html','');
     }   
     $_SESSION['auto_dropzone']=$auto_dropzone;
    
@@ -216,6 +217,7 @@ if ($_FILES){
             return (parts[(parts.length-1)]);
         }
         function is_allowed(filemime){
+            console.log(filemime);
             var r='<?php echo $auto_dropzone['allowed_filetypes']; ?>';
             m=filetype(filemime);if (m==''){return false;}
             if(r.indexOf(m)>-1||r==''){return true; }

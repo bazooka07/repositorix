@@ -50,11 +50,17 @@ function info2html($str){
 	$str=str_ireplace('</author>', '</li>', $str);
 	$str=str_ireplace('</version>', '</li>', $str);
 	$str=str_ireplace('</date>', '</li>', $str);
-	$str=str_ireplace('</site>', '</li>', $str);
+	$str=str_ireplace('</site>', '}}</li>', $str);
+	$str=str_ireplace('<site>', '<site>{{', $str);
+	$str=str_ireplace('<compatible>', '<li class="compatible">PluXML&nbsp;&nbsp;: ', $str);
+	$str=str_ireplace('</compatible>', '</li>', $str);
 	$str=str_ireplace('<version>', '<li class="version">version : ', $str);
-	$str=str_ireplace('<date>', '<li class="date">date&nbsp;&nbsp;&nbsp;&nbsp;: ', $str);
-	$str=str_ireplace('<site>', '<li class="site">site&nbsp;&nbsp;&nbsp;&nbsp;: ', $str);
+	$str=str_ireplace('<date>', '<li class="date">date&nbsp;&nbsp;&nbsp;&nbsp;: ', $str)
+;	$str=str_ireplace('<site>', '<li class="site">site&nbsp;&nbsp;&nbsp;&nbsp;: ', $str);
 	$str=str_ireplace('description>', 'div>', $str);
+	$str = preg_replace_callback('/(?:\{\{)([a-zA-Z0-9\.:\/-_]+)(?:\}\})/i', function($matches) {
+		return '<a href="'.$matches[1].'">'.$matches[1].'</a>';
+	}, $str);
 	return $str;
 }
 function full_url() {     $s = empty($_SERVER["HTTPS"]) ? '' : ($_SERVER["HTTPS"] == "on") ? "s" : "";     $protocol = substr(strtolower($_SERVER["SERVER_PROTOCOL"]), 0, strpos(strtolower($_SERVER["SERVER_PROTOCOL"]), "/")) . $s;     $port = ($_SERVER["SERVER_PORT"] == "80") ? "" : (":".$_SERVER["SERVER_PORT"]);     return $protocol . "://" . $_SERVER['SERVER_NAME'] . $port . $_SERVER['REQUEST_URI']; }
